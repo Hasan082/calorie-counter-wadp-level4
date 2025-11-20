@@ -1,0 +1,426 @@
+.topbar-profile-dropdown .dropdown-item {
+    font-weight: 500;
+    color: #334155;
+    border-radius: 0.5rem;
+    transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.15s;
+}
+.topbar-profile-dropdown .dropdown-item:hover, .topbar-profile-dropdown .dropdown-item:focus {
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    color: #fff;
+    transform: scale(1.04);
+    box-shadow: 0 2px 8px rgba(59,130,246,0.12);
+}
+.topbar-profile-dropdown .dropdown-item.text-danger {
+    color: #ef4444;
+}
+.topbar-profile-dropdown .dropdown-item.text-danger:hover {
+    background: linear-gradient(90deg, #f59e42 0%, #f97316 100%);
+    color: #fff;
+    transform: scale(1.04);
+    box-shadow: 0 2px 8px rgba(245,158,66,0.12);
+}
+/* --- Topbar Profile Dropdown --- */
+.topbar-profile-dropdown {
+    min-width: 160px;
+    border-radius: 0.7rem;
+    box-shadow: 0 4px 24px rgba(59,130,246,0.10);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+.topbar-profile-dropdown .dropdown-item {
+    font-weight: 500;
+    color: #334155;
+    border-radius: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+.topbar-profile-dropdown .dropdown-item:hover, .topbar-profile-dropdown .dropdown-item:focus {
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    color: #fff;
+}
+.topbar-profile-dropdown .dropdown-item.text-danger {
+    color: #ef4444;
+}
+.topbar-profile-dropdown .dropdown-item.text-danger:hover {
+    background: linear-gradient(90deg, #f59e42 0%, #f97316 100%);
+    color: #fff;
+}
+.topbar-avatar.dropdown-toggle::after {
+    display: none;
+}
+/* --- Topbar Logout Button --- */
+.topbar-logout-btn {
+    padding: 0.35rem 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.7rem;
+    margin-left: 0.5rem;
+    background: linear-gradient(90deg, #f59e42 0%, #f97316 100%);
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(245,158,66,0.10);
+    transition: background 0.2s;
+}
+.topbar-logout-btn:hover, .topbar-logout-btn:focus {
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    color: #fff;
+}
+/* --- Top Bar Excel Design --- */
+.top-bar-excel {
+    left: 260px;
+    top: 0;
+    width: calc(100% - 260px);
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    color: #fff;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    min-height: 56px;
+    box-shadow: 0 2px 12px rgba(59,130,246,0.08);
+    transition: background 0.2s;
+}
+.top-bar-excel .fw-bold {
+    color: #fff !important;
+}
+.topbar-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(59,130,246,0.10);
+}
+.topbar-avatar {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(59,130,246,0.10);
+}
+@media (max-width: 767px) {
+    .top-bar-excel {
+        left: 0;
+        width: 100vw;
+        border-radius: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+html, body {
+    overflow-x: hidden;
+}
+/* --- Profile Page Styles --- */
+.profile-page {
+    min-height: 80vh;
+    background: none;
+}
+.profile-card {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 1.2rem;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(59,130,246,0.08);
+}
+.profile-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #f59e42 0%, #f97316 100%);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 2rem;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+    margin-bottom: 0.5rem;
+}
+.profile-card h2 {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.profile-card form .btn-primary {
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 0.7rem;
+}
+/* --- Add Calorie Page Styles --- */
+.add-calorie-page {
+    min-height: 80vh;
+    background: none;
+}
+.add-calorie-card {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 1.2rem;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(59,130,246,0.08);
+}
+.add-calorie-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 2rem;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+    margin-bottom: 0.5rem;
+}
+.add-calorie-card h2 {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.add-calorie-card form .btn-primary {
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 0.7rem;
+}
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+    min-height: 100vh;
+    color: #1e293b;
+}
+
+/* --- Dashboard Styles --- */
+.dashboard-card {
+    min-height: 120px;
+    border-radius: 0.7rem;
+    transition: transform 0.2s;
+}
+.dashboard-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.gradient-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+}
+.gradient-green {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+.gradient-orange {
+    background: linear-gradient(135deg, #f59e42 0%, #f97316 100%);
+}
+.dashboard-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.recent-wrap {
+    border-radius: 1.5rem;
+    background: #fff;
+}
+.recent-meal-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+.recent-meal-card {
+    border-radius: 1rem;
+    background: #f8fafc;
+    transition: box-shadow 0.2s;
+}
+.recent-meal-card:hover {
+    box-shadow: 0 4px 16px rgba(59,130,246,0.10);
+}
+@media (max-width: 767px) {
+    .dashboard-main { margin-top: 20px; }
+    .dashboard-card { min-height: 100px; }
+    .bodycontent { margin-left: 0 !important; width: 100vw !important; }
+    .sidebar { position: static !important; min-height: auto !important; }
+}
+
+div#id_password1_helptext {
+    display: none !important;
+}
+
+.body-wrap {
+    min-height: 100vh;
+}
+
+  li.list-group-item a {
+    display: block;
+    padding: 7.5px 20px !important;
+  }
+
+  li.list-group-item.nav-link {
+    padding: 0;
+  }
+
+  li.list-group-item {
+    padding: 0;
+  }
+
+.sidebar {
+    max-width: 260px;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 16px 0 rgba(59,130,246,0.04);
+    z-index: 1050;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 0;
+    padding: 0 0.7rem 2rem 0.7rem;
+    transition: box-shadow 0.2s;
+}
+.modern-sidebar .logo {
+    padding: 1.5rem 0 1rem 0;
+}
+.sidebar-logo-area {
+    .dashboard-card {
+        min-height: 120px;
+        border-radius: 0.7rem;
+        transition: transform 0.2s;
+        background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        color: #fff;
+    }
+    .dashboard-card.gradient-orange {
+        background: linear-gradient(135deg, #f59e42 0%, #f97316 100%);
+    }
+    .dashboard-card.gradient-green {
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    }
+    .dashboard-card.gradient-blue {
+        background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    }
+    .dashboard-card:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .dashboard-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        background: rgba(255,255,255,0.18);
+    }
+    .recent-wrap {
+        border-radius: 1.5rem;
+        background: #fff;
+    }
+    .recent-meal-list {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    .recent-meal-card {
+        border-radius: 1rem;
+        background: #f8fafc;
+        transition: box-shadow 0.2s;
+    }
+    .recent-meal-card:hover {
+        box-shadow: 0 4px 16px rgba(59,130,246,0.10);
+    }
+    color: #f97316;
+    font-weight: 800;
+}
+.sidebar-nav {
+    margin-top: 1rem;
+}
+.sidebar-link {
+    .add-calorie-card form .btn-primary {
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-radius: 0.7rem;
+        background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+        border: none;
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+        transition: background 0.2s;
+    }
+    .add-calorie-card form .btn-primary:hover {
+        background: linear-gradient(90deg, #f59e42 0%, #f97316 100%);
+        color: #fff;
+    }
+    color: #334155 !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+}
+.sidebar-link.active, .sidebar-link:hover {
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    .profile-card form .btn-primary {
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-radius: 0.7rem;
+        background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+        border: none;
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+        transition: background 0.2s;
+    }
+    .profile-card form .btn-primary:hover {
+        background: linear-gradient(90deg, #f59e42 0%, #f97316 100%);
+        color: #fff;
+    }
+    color: #fff !important;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+}
+.sidebar-link i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+    .sidebar-link.active, .sidebar-link:hover {
+        background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+        color: #fff !important;
+        box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+        border: none;
+    }
+@media (max-width: 767px) {
+    .sidebar {
+        position: static !important;
+        min-height: auto !important;
+        max-width: 100vw;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+    .sidebar-logo-text { font-size: 1.2rem; }
+}
+
+    /* General button style for consistency */
+    .btn-primary {
+        background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+        transition: background 0.2s;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+        background: linear-gradient(90deg, #f59e42 0%, #f97316 100%);
+        color: #fff;
+    }
+
+.bodycontent {
+    margin-left: 260px;
+    padding: 0 20px;
+    min-height: 100vh;
+    min-height: 100svh;
+    box-sizing: border-box;
+    width: calc(100% - 260px);
+    max-width: calc(100% - 260px);
+    margin-top: 35px;
+}
+
+li.list-group-item a {
+    color: #0f172a !important;
+    transition: all .2s linear;
+    margin: 1px 0;
+}
+
+li.list-group-item .active {
+    background: #0a58ca;
+    color: #f1f5f9 !important;
+}
+li.list-group-item:hover a {
+    background: #0a58ca;
+    color: #f1f5f9 !important;
+}
+
+.top-bar {
+    position: fixed!important;
+    top: 0;
+    left: 280px;
+}
+.top-bar h4 {
+    margin: 0;
+}

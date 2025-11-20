@@ -4,9 +4,7 @@
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
-media/
-static/
+
 
 # Virtual Environment
 .env
@@ -30,3 +28,6 @@ htmlcov/
 # Deployment files
 *.tar.gz
 *.zip
+__pycache__
+__pycache__/
+*.egg-info/

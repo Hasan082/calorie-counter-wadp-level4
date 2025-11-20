@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth.views import LogoutView
 from.views import (
     user_registration,
     login_view,
@@ -9,9 +10,13 @@ from.views import (
 
 
 urlpatterns = [
-    path('register/', user_registration, name='register'),
-    path('', login_view, name='login'),
-    path('dashboard', dashboard_view, name='dashboard'),
+# Authentication
+    path('auth/register/', user_registration, name='register'),
+    path('auth/login/', login_view, name='login'),
+    path('auth/logout/', LogoutView.as_view(), name='logout'),
+    
+    # Main pages
+    path('', dashboard_view, name='dashboard'),
     path('profile/', ProfileView, name='profile'),
-    path('calorie-entry/', CalorieEntryView, name='calorie_entry'), # type: ignore
+    path('calorie/entry/', CalorieEntryView, name='calorie_entry'),
 ]

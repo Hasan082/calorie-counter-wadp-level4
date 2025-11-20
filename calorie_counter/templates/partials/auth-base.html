@@ -1,50 +1,70 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-  </head>
 
-  <body>
-    <div class="container">
-      <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="col-md-8">
-          <div class="card mx-auto" style="max-width: 500px; width: 100%;">
-            <div class="card-body">
-              {% include 'partials/alert.html' %}
-              <h3 class="card-title text-center">
-                {% if login_flag %}
-                  Login
-                {% else %}
-                  Register
-                {% endif %}
-              </h3>
-              <form method="post">
-                {% block form_auth %}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    {% if login_flag %}
+    Login | Calorie Counter
+    {% else %}
+    Register | Calorie Counter
+    {% endif %}
+  </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'main.css' %}" />
+</head>
 
-                {% endblock %}
-                <button type="submit" class="btn btn-primary">
-                  {% if login_flag %}
-                    Login
-                  {% else %}
-                    Register
-                  {% endif %}
-                </button>
-              </form>
-              <p class="mt-4">
+<body>
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center py-5" style="min-height: 100vh;">
+      <div class="col-md-8">
+        <div class="mb-2 text-center">
+          <h2 class="text-center">Calorie Tracker</h2>
+          <p class="text-center">Your personal calorie companion</p>
+        </div>
+        <div class="card mx-auto rounded-3 shadow-sm p-4" style="max-width: 500px; width: 100%;">
+          <div class="card-body">
+            {% include 'partials/alert.html' %}
+            <h3 class="card-title text-center">
+              {% if login_flag %}
+              Login
+              {% else %}
+              Register
+              {% endif %}
+            </h3>
+            <form method="post">
+              {% block form_auth %}
+
+              {% endblock %}
+              <button type="submit" class="btn btn-primary d-block w-100 mt-4">
                 {% if login_flag %}
-                  Dont have an account? <a class="badge bg-primary text-decoration-none" href="{% url 'register' %}">Register</a>
+                Login
                 {% else %}
-                  Already have an account? <a class="badge bg-primary text-decoration-none" href="{% url 'login' %}">Login</a>
+                Register
                 {% endif %}
-              </p>
-            </div>
+              </button>
+            </form>
+            <p class="mt-4">
+              {% if login_flag %}
+              Dont have an account? <a class="badge bg-primary text-decoration-none"
+                href="{% url 'register' %}">Register</a>
+              {% else %}
+              Already have an account? <a class="badge bg-primary text-decoration-none"
+                href="{% url 'login' %}">Login</a>
+              {% endif %}
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

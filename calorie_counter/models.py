@@ -3,10 +3,13 @@ from django.db import models
 
 class Profile(models.Model):
     CHOOSE_GENDER = [
+        ("", "Select"),
         ("male", "Male"),
         ("female", "Female"),
     ]
-    user = models.OneToOneField("auth.User", on_delete=models.CASCADE, related_name="user_profile")
+    user = models.OneToOneField(
+        "auth.User", on_delete=models.CASCADE, related_name="user_profile"
+    )
     name = models.CharField(max_length=100)
     gender = models.CharField(
         choices=CHOOSE_GENDER, max_length=10, null=True, blank=True
@@ -27,9 +30,9 @@ class Profile(models.Model):
         """
 
         if None in (self.weight, self.height, self.age, self.gender):
-            return 
+            return
 
-        weight = float(self.weight) # type: ignore
+        weight = float(self.weight)  # type: ignore
         height = float(self.height)  # type: ignore
         age = float(self.age)  # type: ignore
 
@@ -43,10 +46,17 @@ class Profile(models.Model):
 
 
 class CalorieConsumed(models.Model):
-    user = models.ForeignKey("auth.user", on_delete=models.CASCADE, related_name="consumed")
-    date = models.DateField()
-    item_name = models.CharField()
+    user = models.ForeignKey(
+        "auth.User", on_delete=models.CASCADE, related_name="consumed"
+    )
+    date = models.DateField(null=True, blank=True)
+    item_name = models.CharField(max_length=200)
     calorie_consumed = models.PositiveIntegerField()
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    class Meta:
+        ordering = ['-date', '-created_at']
 
     def __str__(self):
         return f"{self.item_name} - {self.date} - {self.calorie_consumed} kcal"
