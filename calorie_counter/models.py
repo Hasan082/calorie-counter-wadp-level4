@@ -6,7 +6,7 @@ class Profile(models.Model):
         ("male", "Male"),
         ("female", "Female"),
     ]
-    user = models.OneToOneField("auth.User", on_delete=models.CASCADE)
+    user = models.OneToOneField("auth.User", on_delete=models.CASCADE, related_name="user_profile")
     name = models.CharField(max_length=100)
     gender = models.CharField(
         choices=CHOOSE_GENDER, max_length=10, null=True, blank=True
@@ -42,10 +42,10 @@ class Profile(models.Model):
 
 
 class CalorieConsumed(models.Model):
-    user = models.ForeignKey("auth.user", on_delete=models.CASCADE)
+    user = models.ForeignKey("auth.user", on_delete=models.CASCADE, related_name="consumed")
     date = models.DateField()
     item_name = models.CharField()
     calorie_consumed = models.PositiveIntegerField()
 
     def __str__(self):
-        return f"{self.profile.name} - {self.date} - {self.calories} kcal"
+        return f"{self.item_name} - {self.date} - {self.calorie_consumed} kcal"
