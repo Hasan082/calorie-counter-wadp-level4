@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="form-wrap mx-auto" style="max-width: 768px;">
+<h2>Update Profile</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Update Profile</button>
+  </form>
+</div>
+{% endblock %}

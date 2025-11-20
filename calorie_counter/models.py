@@ -20,25 +20,26 @@ class Profile(models.Model):
         return self.name
 
     def calculate_bmr(self):
-        if self.weight and self.height and self.age and self.gender:
-            if self.gender == "male":
-                bmr = (
-                    66.47
-                    + (13.75 * self.weight)
-                    + (5.003 * self.height)
-                    - (6.755 * self.age)
-                )
-                self.bmr = bmr
-                self.save()
-            else:
-                bmr = (
-                    655.1
-                    + (9.563 * self.weight)
-                    + (1.850 * self.height)
-                    - (4.676 * self.age)
-                )
-                self.bmr = bmr
-                self.save()
+        """
+        Calculate and update the Basal Metabolic Rate (BMR) for the profile.
+        Uses the Harris-Benedict equation for male and female.
+        Only updates if all required fields are present.
+        """
+
+        if None in (self.weight, self.height, self.age, self.gender):
+            return 
+
+        weight = float(self.weight) # type: ignore
+        height = float(self.height)  # type: ignore
+        age = float(self.age)  # type: ignore
+
+        if self.gender == "male":
+            bmr = 66.47 + (13.75 * weight) + (5.003 * height) - (6.755 * age)
+        else:
+            bmr = 655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age)
+
+        self.bmr = bmr
+        self.save(update_fields=["bmr"])
 
 
 class CalorieConsumed(models.Model):

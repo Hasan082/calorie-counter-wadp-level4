@@ -20,8 +20,28 @@
       <div class="col-md-4">
         <div class="card shadow-sm border-1">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title">My Required Calorie</h5>
+            <h2 class="card-text">{{ req_bmr }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm border-1">
+          <div class="card-body">
+            <h5 class="card-title">
+              {% if caloure_consumed %}
+                {{ caloure_consumed.date }}
+              {% else %}
+                No entry
+              {% endif %}
+            </h5>
+            <h2 class="card-text">
+              {% if caloure_consumed %}
+                {{ caloure_consumed.calorie_consumed }} Kcal
+              {% else %}
+                No entry
+              {% endif %}
+            </h2>
           </div>
         </div>
       </div>
@@ -33,13 +53,30 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm border-1">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h2 class="my-3">My Daily Calorie Intake Hostory</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">SI No</th>
+              <th scope="col">Date</th>
+              <th scope="col">Item Name</th>
+              <th scope="col">Calorie Consumed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cal in caloriedata %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ cal.date }}</td>
+                <td>{{ cal.item_name }}</td>
+                <td>{{ cal.calorie_consumed }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

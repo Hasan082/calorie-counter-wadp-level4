@@ -12,7 +12,7 @@ class RegistrationForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
         
         
-class CalorieEntryForm(forms.Form):
+class CalorieEntryForm(forms.ModelForm):
     date = forms.DateField(widget=forms.SelectDateWidget)
     item_name = forms.CharField(max_length=200)
     calorie_consumed = forms.IntegerField(min_value=0)
@@ -26,6 +26,5 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['name', 'gender', 'age', 'weight', 'height']
-    
         
         
