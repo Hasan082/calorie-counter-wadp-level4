@@ -208,7 +208,7 @@ body {
     background: #fff;
 }
 .recent-meal-list {
-    max-height: 400px;
+    max-height: 60vh;
     overflow-y: auto;
 }
 .recent-meal-card {

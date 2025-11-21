@@ -10,10 +10,10 @@ from.views import (
 
 
 urlpatterns = [
-# Authentication
+    # Authentication
     path('auth/register/', user_registration, name='register'),
     path('auth/login/', login_view, name='login'),
-    path('auth/logout/', LogoutView.as_view(), name='logout'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     
     # Main pages
     path('', dashboard_view, name='dashboard'),

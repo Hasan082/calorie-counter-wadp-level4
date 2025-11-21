@@ -36,7 +36,10 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            messages.success(request, "Login Successfull! Update your profile first")
+            messages.success(request, "Login Successfull!")
+            profile , created = Profile.objects.get_or_create(user=request.user)
+            if created:
+                messages.warning(request, "Update your profile please!")
             return redirect('dashboard')
         else:
             messages.error(request, "Login Failed! Invalid Credentials")
@@ -79,6 +82,8 @@ def dashboard_view(request):
 @login_required
 def ProfileView(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
+    if created:
+        messages.warning(request, "Update your profile first")
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
